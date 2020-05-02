@@ -50,12 +50,14 @@ export class PaginationComponent implements OnInit {
       if (pages.length < pagesToShow) {
         if (Math.min.apply(null, pages) > 1) {
           pages.push(Math.min.apply(null, pages) - 1);
+          // tslint:disable-next-line: no-unused-expression
           console.log('pushing', Math.min.apply(null, pages) - 1), 'onto array';
         }
       }
       if (pages.length < pagesToShow) {
         if (Math.max.apply(null, pages) < totalPages) {
           pages.push(Math.max.apply(null, pages) + 1);
+          // tslint:disable-next-line: no-unused-expression
           console.log('pushing', Math.max.apply(null, pages) + 1), 'onto array';
         }
       }
