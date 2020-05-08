@@ -26,6 +26,7 @@ import * as moment from 'moment';
   styleUrls: ['./line-chart.component.scss'],
 })
 export class LineChartComponent implements OnInit {
+  // tslint:disable-next-line: variable-name
   constructor(private _salesDataService: SalesDataService) {}
 
   topCustomers: string[];
@@ -63,6 +64,7 @@ export class LineChartComponent implements OnInit {
         dates = [].concat.apply([], dates);
         // console.log('dates', dates);
 
+        // tslint:disable-next-line: no-string-literal
         const r = this.getCustomerOrdersByDate(allChartData, dates)['data'];
         // console.log(r);
 
@@ -107,6 +109,7 @@ export class LineChartComponent implements OnInit {
 
     // define our result object to return;
     const result = {};
+    // tslint:disable-next-line: no-string-literal
     const dataSets = (result['data'] = []);
 
     customers.reduce((x, y, i) => {
@@ -115,9 +118,12 @@ export class LineChartComponent implements OnInit {
       // console.log('i', i);
       dataSets[i] = {
         customer: y,
+        // tslint:disable-next-line: no-shadowed-variable
         orders: u.reduce((r, e, i) => {
           const obj = {};
+          // tslint:disable-next-line: no-string-literal
           obj['date'] = e;
+          // tslint:disable-next-line: no-string-literal
           obj['total'] = this.getCustomerDateTotal(e, y); // sum total orders for this customer on this day
           customerOrders.push(obj);
           console.log(

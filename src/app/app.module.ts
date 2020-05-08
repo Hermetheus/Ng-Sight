@@ -1,3 +1,4 @@
+import { ServerService } from './services/server.service';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
@@ -41,7 +42,7 @@ import { SalesDataService } from './services/sales-data.service';
     ChartsModule,
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [SalesDataService],
+  providers: [SalesDataService, ServerService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
