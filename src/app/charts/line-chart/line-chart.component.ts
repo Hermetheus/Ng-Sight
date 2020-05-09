@@ -126,14 +126,14 @@ export class LineChartComponent implements OnInit {
           // tslint:disable-next-line: no-string-literal
           obj['total'] = this.getCustomerDateTotal(e, y); // sum total orders for this customer on this day
           customerOrders.push(obj);
-          console.log(
-            'Reducing:',
-            e,
-            'at index:',
-            i,
-            'customerOrders',
-            customerOrders
-          );
+          // console.log(
+          //   'Reducing:',
+          //   e,
+          //   'at index:',
+          //   i,
+          //   'customerOrders',
+          //   customerOrders
+          // );
           return customerOrders;
         }),
       };
